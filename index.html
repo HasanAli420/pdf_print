@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pdf file</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+      /* common styling */
+
+      *{
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+
+
+      body{
+        background: rgb(204,204,204); 
+        font-family: 'Roboto Condensed', sans-serif;
+      }
+
+
+      .border{
+        border-bottom: 3px solid black;
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+      }
+
+      .w-full{
+        width: 100%;
+      }
+
+      .center-title{
+        text-align: center;
+        color: black;
+        padding: 20px 0;
+        font-size: 16px;
+      }
+
+      .td-style{
+        border-bottom: 1px solid #e3e3e3;
+        padding: 5px 0;
+        padding-right: 40px;
+        padding-left: 10px;
+        color: black;
+        font-size: 15px;
+      }
+
+      .th-style{
+        border-bottom: 1px solid #e3e3e3;
+        padding-right: 40px;
+        padding-left: 10px;
+        text-align: left;
+        color: black;
+        font-size: 15px;
+      }
+
+      /* common styling end */
+
+      /* ************************ */
+
+      .page{
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 35px;
+        margin: 1cm auto;
+        background: #fff;
+        border: 1px solid #d5d5d8;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .title{
+        color: #fff;
+        background-color: black;
+        text-align: center;
+        padding: 18px 0;
+      }
+
+      .title h1{
+        text-align: center;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        word-spacing: 2px;
+        letter-spacing: 1px;
+      }
+
+
+      /* Details Section ********/
+
+      .details-section td{
+        border-bottom: 1px solid #e3e3e3;
+        padding: 5px;
+        color: black;
+        padding-right: 10px;
+        font-size: 15px;
+      }
+
+      .details-section th{
+        color: black;
+        text-align: left;
+        font-weight: normal;
+        border-bottom: 1px solid #e3e3e3;
+        padding: 5px;
+        font-size: 15px;
+        padding-right: 10px;
+      }
+      /* Details Section End ******* */
+
+      /* Stand Table */
+
+      .stand-details th{
+        color: black;
+        padding: 5px;
+        background: black;
+        color: #fff;
+        text-align: left;
+        font-size: 15px;
+        border-bottom: 1px solid #e3e3e3;
+      }
+
+      .stand-details td{
+        padding: 5px;
+        font-size: 15px;
+        color: black;
+        text-align: left;
+        border-bottom: 1px solid #e3e3e3;
+      }
+      /* Stand Table End */
+
+      /* Env Eetails */
+
+      .env-details .env-table th{
+        color: black;
+        text-align: left;
+        font-weight: normal;
+        border-bottom: 1px solid #e3e3e3;
+        padding: 4px;
+        padding-right: 10px;
+        font-size: 15px;
+      }
+
+      .env-details .env-table td{
+        border-bottom: 1px solid #e3e3e3;
+        padding: 4px;
+        color: black;
+        padding-right: 10px;
+        font-size: 15px;
+      }
+
+      /* Env Eetails End */
+
+
+      /* ************************** */
+
+      /* Read Details */
+
+      .read-details .read-table th{
+        color: black;
+        padding:4px 5px;
+        background: black;
+        color: #fff;
+        text-align: left;
+        font-size: 15px;
+        border-bottom: 1px solid #e3e3e3;
+      }
+
+      .read-details .read-table td{
+        border-bottom: 1px solid #e3e3e3;
+        padding: 5px;
+        font-size: 15px;
+        color: black;
+        padding-right: 10px;
+      }
+
+      /* Read Details End */
+
+      /* Remarks */
+
+      .mark-title {
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+      }
+
+      .mark-title h2{
+        color: black;
+        padding: 4px 15px;
+        font-size: 15px;
+        text-align: left;
+        border-bottom: 1px solid #e3e3e3;
+      }
+
+      .mark-list{
+        padding: 8px 0;
+      }
+
+      .mark-list ol{
+        padding: 4px 15px;
+        font-size: 15px;
+      }
+
+      /* Remarks End */
+
+      .calibrate-table th{
+        color: black;
+        text-align: left;
+        font-weight: normal;
+        border-bottom: 1px solid #e3e3e3;
+        padding: 5px;
+        font-size: 15px;
+      }
+    </style>
+</head>
+<body>
+
+  <div class="pdf-print">
+    <!-- page -->
+    <div class="page">
+      <!-- page top section -->
+      <div class="top-section">
+
+        <div class="title">
+          <h1>SHRIRANG AUTOMATION AND CONTROLS</h1>
+        </div>
+
+        <div class="date-section">
+          <table class="date-table border w-full">
+            <tr>
+              <th class="th-style">Certificate No</th>
+              <td class="td-style">: SANC/CC/DAI/01</td>
+              
+              <th class="th-style">Date of Issue</th>
+              <td class="td-style">: 25-01-2023</td>
+            </tr>
+
+            <tr>
+              <th class="th-style">Date of Calibration</th>
+              <td class="td-style">: 2023-01-25</td>
+              <th class="th-style">Recom. Due Date </th>
+              <td class="td-style">: 2024-01-25</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="details-section">
+          <table class="details-table  border w-full">
+            <tr>
+              <th>Customer Details</th>
+              <td>: Parigh techonogies</td>
+              <th>Calibrated at</th>
+              <td>: Lab</td>
+            </tr>
+
+            <tr>
+              <th>Date of Calibration</th>
+              <td>: 2023-01-25</td>
+              <th>Recom. Due Date </th>
+              <td>: 2024-01-25</td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+      <!-- page top section end -->
+
+      <div class="stand-title border w-full">
+        <h2 class="center-title">Details of Standard Used</h2>
+      </div>
+
+      <div class="stand-details">
+        <table class="stand-table border w-full">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Sr.No.</th>
+              <th>Valid upto</th>
+              <th>Report No.</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>check 144</td>
+              <td>41574444u</td>
+              <td>2023-01-11T18:00:00.000Z</td>
+              <td>2023-01-24T18:00:00.000Z</td>
+            </tr>
+
+            <tr>
+              <td>check 144</td>
+              <td>41574444</td>
+              <td>2023-01-11T18:00:00.000Z</td>
+              <td>2023-01-24T18:00:00.000Z</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="env-details">
+        <table class="env-table border w-full">
+          <tr>
+            <th>Environmental Details</th>
+            <td>: Temperature : 25±5°C </td>
+            <th>Relative Humidity</th>
+            <td>: 40-70 % RH</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="read-title border w-full">
+        <h2 class="center-title">Readings</h2>
+      </div>
+
+      <div class="read-details">
+        <table class="read-table border w-full">
+          <thead>
+            <tr>
+              <th>S.No.</th>
+              <th>Master Reading</th>
+              <th>Corresponding mA</th>
+              <th>Standard Reading</th>
+              <th></th>
+              <th>Mean Value</th>
+              <th>Corresponding Pressure</th>
+              <th>Error</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td></td>
+              <td>nWC</td>
+              <td>mA</td>
+              <td>mA</td>
+              <td></td>
+              <td>mA</td>
+              <td>nWC</td>
+              <td>nWC</td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Up</td>
+              <td>Down</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>1</td>
+              <td></td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td></td>
+              <td>100</td>
+              <td>101.57649650361532</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td></td>
+              <td>100</td>
+              <td>101.57649650361532</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td></td>
+              <td>100</td>
+              <td>101.57649650361532</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td></td>
+              <td>100</td>
+              <td>101.57649650361532</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mark-title w-full">
+        <h2>Remarks</h2>
+      </div>
+
+      <div class="mark-list border w-full">
+        <ul>
+          <ol>1. This Report Refers only to the perticular Item Calibrated at Lab/Site.</ol>
+          <ol>2. This Certificate shall not be reproduced, except in full unless written permission for the same is obtained from SANC.</ol>
+        </ul>
+      </div>
+
+      <div class="calibrate-section">
+        <table class="calibrate-table border w-full">
+          <tr>
+            <th>Calibrated by :</th>
+            <td> </td>
+            <th>Approved by :</th>
+            <td> </td>
+          </tr>
+
+          <tr>
+            <th>Lab Engineer :</th>
+            <td> </td>
+            <th>Lab Incharge :</th>
+            <td> </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- page end -->
+
+</body>
+</html>
